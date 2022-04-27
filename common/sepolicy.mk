@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from Evolution X
+# inherit from EpicROM-AOSP
 #
 
 ifeq ($(TARGET_COPY_OUT_VENDOR), vendor)
@@ -10,20 +10,20 @@ endif
 endif
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    device/evolution/sepolicy/common/public
+    device/epic/sepolicy/common/public
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/evolution/sepolicy/common/private
+    device/epic/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    device/evolution/sepolicy/common/dynamic \
-    device/evolution/sepolicy/common/system
+    device/epic/sepolicy/common/dynamic \
+    device/epic/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/evolution/sepolicy/common/dynamic \
-    device/evolution/sepolicy/common/vendor
+    device/epic/sepolicy/common/dynamic \
+    device/epic/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/evolution/sepolicy/legacy-common/sepolicy.mk
+-include device/epic/sepolicy/legacy-common/sepolicy.mk
